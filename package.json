@@ -1,0 +1,12 @@
+{
+  "name": "currency-realtime",
+  "version": "1.0.0",
+  "repository": "",
+  "author": "Ilya Bartenev <venetrabcat@gmail.com>",
+  "description": "Getting the current rate for the specified currency",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "MIT"
+}
