@@ -1,7 +1,7 @@
 {
   "name": "currency-realtime",
-  "version": "1.0.0",
-  "repository": "",
+  "version": "1.0.1",
+  "repository": "https://github.com/ilyaVenetrab/currency-realtime",
   "author": "Ilya Bartenev <venetrabcat@gmail.com>",
   "description": "Getting the current rate for the specified currency",
   "scripts": {
