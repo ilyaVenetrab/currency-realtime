@@ -1,6 +1,6 @@
-import { createForm } from '../utils/create-form';
 import axios from 'axios';
 import { ExchangesType } from '../types/exchanges';
+import { Form } from '../components/form';
 
 interface IConvertType {
   message: string;
@@ -21,7 +21,15 @@ export function exchanges(id: string) {
         `https://api.freecurrencyapi.com/v1/currencies?apikey=fca_live_rCzRH1HiajgcNsAjjiMXLASePC2o5kAkP4FsPdVm`,
       )
       .then((body: { data: { data: [ExchangesType] } }) => {
-        document.getElementById(id)?.append(createForm(body.data.data));
+        customElements.define(Form.ELEMENT_KEY, Form);
+        const element = document.createElement(Form.ELEMENT_KEY);
+        element.setAttribute('options', JSON.stringify(body.data.data));
+        element.setAttribute(
+          'data-value',
+          document.getElementById(id)?.getAttribute('data-value') || '',
+        );
+
+        document.getElementById(id)?.append(element);
         return resolve({ message: `create element in id: ${id}` });
       })
       .catch((err) => {
